@@ -13,7 +13,7 @@
               <button :disabled="devolution.hasPaymentCommitment || selectedDues.length == 0" class="btn btn-primary" @click="printPaymentCommitment()">
                 <i class="fa fa-print"></i> Imprimir Compromiso
               </button>
-              <button class="btn btn-primary" data-toggle="tooltip" title="Crear compromiso de Pago" @click="createPaymentCommitment()">
+              <button class="btn btn-primary hidden" data-toggle="tooltip" title="Crear compromiso de Pago" @click="createPaymentCommitment()">
                 <!-- :disabled="!can('create_observation_type')"
                 v-if="can('read_observation_type')" -->
                 <i class="fa fa-plus"></i> Crear compromiso de Pago
@@ -21,6 +21,43 @@
             </div>
           </div>
         </div>
+        <!---------------->
+        
+        <div class="row">
+        <div class="col-md-12" :class="{'has-error': errors.has('type_discount')}">
+          <div class="col-md-3">
+            <label class="control-label">Tipo De descuento</label>
+          </div>
+          <div class="col-md-9">
+            <input type="radio" id="total_discount" name="type_discount" value="total" v-model="form.discountType" v-validate.initial="'required'">
+            <label for="total_discount" class="pointer">Por el Total de la Deuda Pendiente</label>
+            <br>
+            <input type="radio" id="percentage_discount" name="type_discount" value="percentage" v-model="form.discountType" v-validate.initial="'required'">
+            <label for="percentage_discount" class="pointer">Porcentaje para Amortizar</label>
+            <br>
+            <select
+              class="form-control m-b"
+              name="percentage"
+              v-model="form.percentage"
+              v-if="form.discountType == 'percentage'"
+            >
+              <option v-for="p in percentages" :value="p.percentage" :key="p.percentage">{{ p.name}}</option>
+            </select>
+            <i v-show="errors.has('percentage')" class="fa fa-warning text-danger"></i>
+            <span
+              v-show="errors.has('percentage')"
+              class="text-danger"
+            >{{ errors.first('percentage') }}</span>
+          </div>
+          <i v-show="errors.has('type_discount')" class="fa fa-warning text-danger"></i>
+            <span
+              v-show="errors.has('type_discount')"
+              class="text-danger"
+            >{{ errors.first('type_discount') }}</span>
+        </div>
+        </div>
+        
+        <!---------------->
         <!-- v-if="can('read_observation_type')" -->
         <div class="ibox-content">
           <div v-for="devolution in devolutions" :key="devolution.id">
@@ -53,7 +90,7 @@
               <tr>
                 <td>Total Deuda Pendiente</td>
                 <td>
-                  <strong>{{ devolution.balance | currency }}</strong>
+                  <simportlution.balance | currency }}</strong>
                 </td>
               </tr>
             </table>
@@ -62,6 +99,13 @@
             <div class="alert alert-info">El afiliado no tiene deudas.</div>
           </div> -->
         </div>
+        <center><button class="btn btn-primary" type="button" @click="savePaymentCommitment()">
+              <i class="fa fa-check-circle"></i>&nbsp;Guardar
+        </button></center>
+
+
+
+
         <!-- v-else -->
         <div class="ibox-content">
           <div class="alert alert-warning">No tiene permisos para ver las Devoluciones.</div>
@@ -72,6 +116,7 @@
       <div class="ibox-title">
         <h1>Crea compromiso de Pago</h1>
       </div>
+      
       <div class="row">
         <div class="col-md-12" :class="{'has-error': errors.has('type_discount')}">
           <div class="col-md-3">
@@ -104,13 +149,15 @@
               class="text-danger"
             >{{ errors.first('type_discount') }}</span>
         </div>
+        
         <div class="col-md-12">
           <div class="text-center m-sm">
-            <button class="btn btn-danger" type="button" @click="$modal.hide('observation-modal')">
-              <i class="fa fa-times-circle"></i>&nbsp;&nbsp;
-              <span class="bold">Cancelar</span>
-            </button>
-            <button class="btn btn-primary" type="button" @click="savePaymentCommitment()">
+              <button class="btn btn-danger" type="button" @click="cancel()">
+                  <i class="fa fa-times-circle"></i>&nbsp;&nbsp;
+                  <span class="bold">Cancelar</span>
+              </button>
+              <button :disabled="devolution.hasPaymentCommitment || selectedDues.length == 0" class="btn btn-primary" @click="printPaymentCommitment()">
+           <!-- <button class="btn btn-primary" type="button" @click="savePaymentCommitment()">-->
               <i class="fa fa-check-circle"></i>&nbsp;Guardar
             </button>
           </div>
