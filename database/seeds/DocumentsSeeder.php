@@ -139,8 +139,8 @@ DB::table('document_type')->insert([
 ['name' => 'Testimonio de Declaratoria de Tutoría','issued'=>'Autoridad Competente'],
 ['name' => 'Testimonio de apertura de sobre lacrado dejado por el (la) titular.','issued'=>'autoridad competente'],
 
-        ];
-        
-        Document::insert($documents);
+    
+    ]);
+
     }
 }
