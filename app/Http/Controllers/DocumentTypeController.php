@@ -2,10 +2,10 @@
 
 namespace Muserpol\Http\Controllers;
 
-use Muserpol\RetirementFundRequirementType;
 use Illuminate\Http\Request;
+use Muserpol\Http\Controllers\Controller;
 
-class RetirementFundRequirementTypeController extends Controller
+class DocumentTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class RetirementFundRequirementTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Muserpol\RetirementFundRequirementType  $retirementFundRequirementType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(RetirementFundRequirementType $retirementFundRequirementType)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class RetirementFundRequirementTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Muserpol\RetirementFundRequirementType  $retirementFundRequirementType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(RetirementFundRequirementType $retirementFundRequirementType)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class RetirementFundRequirementTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Muserpol\RetirementFundRequirementType  $retirementFundRequirementType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RetirementFundRequirementType $retirementFundRequirementType)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class RetirementFundRequirementTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Muserpol\RetirementFundRequirementType  $retirementFundRequirementType
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RetirementFundRequirementType $retirementFundRequirementType)
+    public function destroy($id)
     {
         //
     }

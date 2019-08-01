@@ -16,15 +16,15 @@
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
-                                        data-original-title="00 01 - INSPECTOR GENERAL, SUPERVISOR">INSP GRAL.</div>
+                                        data-original-title="00 01 - INSPECTOR GENERAL, SUPERVISOR">INSP. GRAL. /SUPERVISOR</div>
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
-                                        data-original-title="00 02 - SUBCOMANDANTE, EX COMANDANTE">SBCMTE.GRAL.</div>
+                                        data-original-title="00 02 - SUBCOMANDANTE, EX COMANDANTE">SBCMTE. GRAL. /EXCMDTE</div>
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
-                                        data-original-title="00 03 - GENERAL SUPERVISOR">INSP SUP.</div>
+                                        data-original-title="00 03 - GENERAL SUPERVISOR">GRAL. SUP.</div>
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
@@ -32,7 +32,7 @@
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
-                                        data-original-title="01 01 - CORONEL CON SUELDO DE GENERAL">CNL.</div>
+                                        data-original-title="01 01 - CORONEL CON SUELDO DE GENERAL">CNL.Art.133.</div>
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
@@ -106,7 +106,7 @@
         </div>
         <div class="ibox float-e-margings">
             <div class="ibox-title">
-                <h2>Tercer Nivel</h2>
+                <h2>Tercer Nivel</h2>CNL
             </div>
             <div class="ibox-content">
                 <div class="row">
@@ -194,11 +194,11 @@
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
-                                        data-original-title="04 14 - CABO ADMINISTRATIVO">CBO.</div>
+                                        data-original-title="04 14 - CABO ADMINISTRATIVO">CBO. ADM.</div>
                                 </th>
                                 <th>
                                     <div data-toggle="tooltip" data-placement="top" data-container="body"
-                                        data-original-title="04 16 - POLICIA ADMINISTRATIVO">POL.</div>
+                                        data-original-title="04 16 - POLICIA ADMINISTRATIVO">POL. ADM.</div>
                                 </th>
                             </tr>
                         </thead>

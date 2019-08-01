@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Muserpol\Models\Affiliate;
 use Muserpol\Models\ScannedDocument;
 use Muserpol\Models\ProcedureDocument;
+use Muserpol\Models\AffiliateSubmittedDocument;
 use Storage;
 use Response;
 use File;
@@ -32,10 +33,17 @@ class ScannedDocumentController extends Controller
     }
 
     public function create_document($affiliate_id){
-        $affililate =Affiliate::find($affiliate_id);
+        $affiliate =Affiliate::find($affiliate_id);
         $procedure_documents = ProcedureDocument::all();
+        if($affiliate_id){
+        $affiliate_submitted_documents = AffiliateSubmittedDocument::all();
+                
+        $data = array('affiliate'=>$affiliate,'affiliate_submitted_documents'=>$affiliate_submitted_documents);
+        }else{
+        $affiliate_submitted_documents="";
+
+        }
         
-        $data = array('affiliate'=>$affililate,'procedure_documents'=>$procedure_documents);
         return view('affiliates.create_scanned_document',$data);
     }
 
@@ -45,10 +53,14 @@ class ScannedDocumentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         store(Request $request)
     {
         //
         // return $request->all();
+        logger($request->all());
+        $affiliate = Affiliate::find($request->affiliate_id);
+        
+        /////////////////////////
         $path = $request->file('archivo')->store('pdfs');
         // return $path;
         $document = new ScannedDocument;

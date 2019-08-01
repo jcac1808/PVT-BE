@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Parametros para la calificacion')
+@section('title', 'Parametros para la calificaci&oacuten')
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-md-7">
@@ -20,7 +20,7 @@
             <div class="m-b-md">
                 <h2 class="font-bold no-margins" data-toggle="tooltip" data-placement="top"
                     title="Parametros para la calificacion">
-                    Parametros para la calificacion
+                    Parametros para la calificaci&oacuten
                 </h2>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <li class="list-group-item " data-toggle="tab" href="#tab-eco-com-averages"><a href="#"><i
                             class="fa fa-address-card"></i> Promedios</a></li>
                 <li class="list-group-item " data-toggle="tab" href="#tab-complementary-factor"><a href="#"><i
-                            class="fa fa-users"></i> Factor de Complementacion</a></li>
+                            class="fa fa-users"></i> Factor de Complementaci&oacuten</a></li>
                 <li class="list-group-item " data-toggle="tab" href="#tab-eco-com-procedure"><a href="#"><i
                             class="fa fa-users"></i> Rango de Fechas</a></li>
                 <li class="list-group-item " data-toggle="tab" href="#tab-eco-com-import-rents"><a href="#"><i
@@ -41,7 +41,7 @@
                 <li class="list-group-item " data-toggle="tab" href="#tab-eco-com-import-pago-futuro"><a href="#"><i
                             class="fa fa-users"></i> Importar Pago a Futuro</a></li>
                 <li class="list-group-item " data-toggle="tab" href="#tab-eco-com-automatic-qualification"><a href="#"><i
-                            class="fa fa-users"></i> Calificacion Automatica</a></li>
+                            class="fa fa-users"></i> Calificaci&oacuten Automatica</a></li>
             </ul>
         </div>
     </div>
@@ -196,6 +196,8 @@
                 }
             },
             columns: [
+                { data: 'code', sClass: "text-center" },
+                { data: 'correlative', sClass: "text-center" },
                 { data: 'degree', sClass: "text-center" },
                 { data: 'type', bSortable: false },
                 { data: 'rmin', bSortable: false },

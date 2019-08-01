@@ -1308,6 +1308,7 @@ class EconomicComplementController extends Controller
             ->orderBy('procedure_modalities.id', 'ASC');
 
         return Datatables::of($average_list)
+        
             ->addColumn('correlative', function ($average_list) {
             return $average_list->correlative;
              })

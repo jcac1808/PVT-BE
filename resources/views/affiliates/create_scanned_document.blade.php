@@ -25,6 +25,7 @@
                         <div class="input-group">
                             <input type="hidden" id="procedure_document_id" class="form-control" name="procedure_document_id" >
                             <input type="text" id="procedure_document_name" class="form-control" >
+
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" data-toggle="modal" data-target="#SelectModal"> <i class="fa fa-file"></i> </button>
                             </span>
@@ -77,6 +78,7 @@
             {!! Form::close() !!}
         </div>
     </div>
+
     <div class="modal inmodal"  id="SelectModal"  tabindex="-1" role="dialog"  aria-hidden="true">
         <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -89,19 +91,22 @@
                     <table id="ProcedureDocuments" class="table" style="width:100%">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>Nombre</th>
-                                <th>Accion</th>
+                                <th style="widht:15px">id</th>
+                                <th style="widht:70px">Nombre</th>
+                                <th style="widht:15px">Accion</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($procedure_documents as $procedure_document)
+                        
+                            @foreach($affiliate_submitted_documents as $affiliate_document)
+                           
                             <tr>
-                                <td>{{$procedure_document->id}}</td>
-                                <td>{{$procedure_document->name}}</td>
-                            <td><button class="btn btn-success select_procedure" data-id="{{$procedure_document->id}}" data-name="{{$procedure_document->name}}"  data-dismiss="modal">Seleccionar</button></td>
+                                <td style="widht:15px">{{$affiliate_document->affiliate_id}}-{{$affiliate->id }}</td>
+                                <td style="widht:70px">{{$affiliate_document->affiliate_id}}</td>
+                                <td style="widht:15px"><button class="btn btn-success select_procedure" data-id="{{$affiliate_document->id}}" data-name="{{$affiliate_document->name}}"  data-dismiss="modal">Seleccionar</button></td>
                             </tr>
+                          
                             @endforeach
                         </tbody>
                     </table>

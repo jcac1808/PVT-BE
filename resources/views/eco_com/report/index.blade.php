@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Parametros para la calificacion')
+@section('title', 'Parametros para la calificaci&oacuten')
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-md-7">
