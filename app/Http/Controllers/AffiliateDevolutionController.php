@@ -203,9 +203,9 @@ class AffiliateDevolutionController extends Controller
             'eco_com' => $eco_com,
             'user' => $user,
             'semesters' => $semesters,
+            'start_eco_com_procedure' => $start_eco_com_procedure,
             'current_semester' => $current_semester,
-            'duess' => $duess,
-            'start_eco_com_procedure' => $start_eco_com_procedure
+            'duess' => $duess
         ];
         $pages = [];
         $pages[] = \View::make('affiliates.print.devolution_payment_commitment', $data)->render();
