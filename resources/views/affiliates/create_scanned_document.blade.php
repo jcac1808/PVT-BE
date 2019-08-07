@@ -98,15 +98,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                        
-                            @foreach($affiliate_submitted_documents as $affiliate_document)
-                           
+                            {{$affiliate->id}}
+                            @foreach($affiliate_documents as $affiliate_document)
+                            
                             <tr>
                                 <td style="widht:15px">{{$affiliate_document->affiliate_id}}-{{$affiliate->id }}</td>
                                 <td style="widht:70px">{{$affiliate_document->affiliate_id}}</td>
                                 <td style="widht:15px"><button class="btn btn-success select_procedure" data-id="{{$affiliate_document->id}}" data-name="{{$affiliate_document->name}}"  data-dismiss="modal">Seleccionar</button></td>
                             </tr>
-                          
+                            
                             @endforeach
                         </tbody>
                     </table>
