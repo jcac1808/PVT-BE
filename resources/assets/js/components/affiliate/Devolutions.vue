@@ -11,6 +11,7 @@
                 <i class="fa fa-print"></i> Imprimir Certificacion
               </button>
               <button :disabled="devolution.hasPaymentCommitment || selectedDues.length == 0" class="btn btn-primary" @click="printPaymentCommitment()">
+                
                 <i class="fa fa-print"></i> Imprimir Compromiso
               </button>
               <button class="btn btn-primary hidden" data-toggle="tooltip" title="Crear compromiso de Pago" @click="createPaymentCommitment()">
@@ -90,7 +91,7 @@
               <tr>
                 <td>Total Deuda Pendiente</td>
                 <td>
-                  <simportlution.balance | currency }}</strong>
+                  <strong> {{ devolution.balance | currency }}</strong>
                 </td>
               </tr>
             </table>
@@ -150,17 +151,6 @@
               class="text-danger"
             >{{ errors.first('type_discount') }}</span>
         </div>
-<<<<<<< HEAD
-        
-        <div class="col-md-12">
-          <div class="text-center m-sm">
-              <button class="btn btn-danger" type="button" @click="cancel()">
-                  <i class="fa fa-times-circle"></i>&nbsp;&nbsp;
-                  <span class="bold">Cancelar</span>
-              </button>
-              <button :disabled="devolution.hasPaymentCommitment || selectedDues.length == 0" class="btn btn-primary" @click="printPaymentCommitment()">
-           <!-- <button class="btn btn-primary" type="button" @click="savePaymentCommitment()">-->
-=======
         <div class="col-md-12" :class="{'has-error': errors.has('type_discount')}">
           <div class="col-md-3">
             <label class="control-label">Gestion inicio pago deuda</label>
@@ -187,7 +177,6 @@
               <span class="bold">Cancelar</span>
             </button>
             <button class="btn btn-primary" type="button" @click="savePaymentCommitment()">
->>>>>>> 8fdd960c14f1137e0b66433d1cadca78686f3d39
               <i class="fa fa-check-circle"></i>&nbsp;Guardar
             </button>
           </div>
@@ -349,11 +338,14 @@ export default {
       await axios.post('/affiliate_devolution_payment_commitment', this.form)
       .then(response => {
         console.log(response)
+          
         this.$modal.hide("create-payment-commitment-modal");
         this.devolution = response.data.devolution;
       }).catch(error => {
         flashErrors("Error: ", error.response.data.errors);
       })
+
+    
     },
     async printPaymentCommitment(){
       try {

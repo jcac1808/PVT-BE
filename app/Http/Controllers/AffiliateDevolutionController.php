@@ -91,6 +91,7 @@ class AffiliateDevolutionController extends Controller
             'eco_coms' => $eco_coms,
             'user' => $user,
             'semesters' => $semesters
+        
         ];
         $pages = [];
         $pages[] = \View::make('eco_com.print.certification_devolutions', $data)->render();
@@ -140,8 +141,7 @@ class AffiliateDevolutionController extends Controller
     }
     public function printDevolutionPaymentCommitment(Request $request, $affiliate_id)
     {
-        $duesss = $request->all();
-        
+       
         //logger($affiliate_id);
        // logger($request->dues);
         $duess = $request->dues;
@@ -204,7 +204,7 @@ class AffiliateDevolutionController extends Controller
             'user' => $user,
             'semesters' => $semesters,
             'start_eco_com_procedure' => $start_eco_com_procedure,
-            'current_semester' => $current_semester,
+            
             'duess' => $duess
         ];
         $pages = [];
